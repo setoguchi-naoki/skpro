@@ -79,8 +79,52 @@ take one or multiple ``sklearn`` estimators and adda probabilistic prediction mo
 
     MapieRegressor
 
-Base
-----
+.. currentmodule:: skpro.regression.cyclic_boosting
+
+.. autosummary::
+    :toctree: auto_generated/
+    :template: class.rst
+
+    CyclicBoosting
+
+Linear regression
+-----------------
+
+.. currentmodule:: skpro.regression.linear
+
+.. autosummary::
+    :toctree: auto_generated/
+    :template: class.rst
+
+    ARDRegression
+    BayesianRidge
+
+Gaussian process and kernel regression
+--------------------------------------
+
+.. currentmodule:: skpro.regression.gp
+
+.. autosummary::
+    :toctree: auto_generated/
+    :template: class.rst
+
+    GaussianProcess
+
+
+Adapters to other interfaces
+----------------------------
+
+.. currentmodule:: skpro.regression.adapters.sklearn
+
+.. autosummary::
+    :toctree: auto_generated/
+    :template: class.rst
+
+    SklearnProbaReg
+
+
+Base classes
+------------
 
 .. currentmodule:: skpro.regression.base
 

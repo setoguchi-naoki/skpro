@@ -14,6 +14,139 @@ You can also subscribe to ``skpro``'s
 
 For planned changes and upcoming releases, see our :ref:`roadmap`.
 
+[2.1.2] - 2023-01-07
+====================
+
+Highlights
+----------
+
+* ``sklearn`` based probabilistic regressors - Gaussian processes, Bayesian linear regression (:pr:`166`) :user:`fkiraly`
+* ``SklearnProbaReg`` - general interface adapter to ``sklearn`` regressors with variance prediction model (:pr:`163`) :user:`fkiraly`
+
+Dependency changes
+~~~~~~~~~~~~~~~~~~
+
+* ``scikit-base`` bounds have been updated to ``<0.8.0,>=0.6.1``.
+* ``polars`` (data container soft dependency) bounds have been updated to allow python 3.12.
+
+Enhancements
+------------
+
+Data types, checks, conversions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [ENH] ``n_features`` and ``feature_names`` metadata field for table mtypes (:pr:`150`) :user:`fkiraly`
+* [ENH] ``check_is_mtype`` dict type return, improved input check error messages in ``BaseRegressorProba`` (:pr:`151`) :user:`fkiraly`
+
+Probability distributions
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [ENH] adapter from ``scipy`` ``rv_discrete`` to ``skpro`` ``Empirical`` (:pr:`155`) :user:`fkiraly`
+
+Probabilistic regression
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [ENH] ``sklearn`` wrappers to str-coerce columns of ``pd.DataFrame`` before passing by @fkiraly in https://github.com/sktime/skpro/pull/148
+* [ENH] clean up copy-paste leftovers in ``BaseProbaRegressor`` by @fkiraly in https://github.com/sktime/skpro/pull/156
+* [ENH] adapter for ``sklearn`` probabilistic regressors (:pr:`163`) :user:`fkiraly`
+* [ENH] add tags to ``SklearnProbaReg`` (:pr:`168`) :user:`fkiraly`
+* [ENH] interfacing all concrete ``sklearn`` probabilistic regressors (:pr:`166`) :user:`fkiraly`
+
+Test framework
+~~~~~~~~~~~~~~
+
+* [ENH] scenario tests for mixed ``pandas`` column index types (:pr:`145`) :user:`fkiraly`
+* [ENH] scitype inference utility, test class register, test class test condition (:pr:`159`) :user:`fkiraly`
+
+Fixes
+-----
+
+Probabilistic regression
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [BUG] in probabilistic regressors, ensure correct index treatment if ``X: pd.DataFrame`` and ``y: np.ndarray`` are passed (:pr:`146`) :user:`fkiraly`
+
+Documentation
+-------------
+
+* [DOC] update ``AUTHORS.rst`` file (:pr:`147`) :user:`fkiraly`
+
+Maintenance
+-----------
+
+* [MNT] [Dependabot](deps): Bump ``actions/upload-artifact`` from 3 to 4 (:pr:`154`) :user:`dependabot`
+* [MNT] [Dependabot](deps): Bump ``actions/download-artifact`` from 3 to 4 (:pr:`153`) :user:`dependabot`
+* [MNT] [Dependabot](deps): Bump ``actions/setup-python`` from 4 to 5 (:pr:`152`) :user:`dependabot`
+* [MNT] [Dependabot](deps-dev): Update ``sphinx-gallery`` requirement from ``<0.15.0`` to ``<0.16.0`` (:pr:`149`) :user:`dependabot`
+* [MNT] [Dependabot](deps-dev): Update ``scikit-base`` requirement from ``<0.7.0,>=0.6.1`` to ``>=0.6.1,<0.8.0`` (:pr:`169`) :user:`dependabot`
+* [MNT] adding ``codecov.yml`` and turning coverage reports informational (:pr:`165`) :user:`fkiraly`
+* [MNT] handle deprecation of ``pandas.DataFrame.applymap`` (:pr:`170`) :user:`fkiraly`
+* [MNT] handle ``polars`` deprecations (:pr:`171`) :user:`fkiraly`
+
+
+[2.1.1] - 2023-11-02
+====================
+
+Highlights
+----------
+
+* probabilistic regressor: multiple quantile regression (:pr:`108`) :user:`Ram0nB`
+* probabilistic regressor: interface to ``MapieRegressor`` from ``mapie`` package
+  (:pr:`136`) :user:`fkiraly`
+* framework support for ``polars`` via mtypes (:pr:`130`) :user:`fkiraly`
+
+Enhancements
+------------
+
+Data types, checks, conversions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [ENH] ``polars`` mtypes for data tables (:pr:`130`) :user:`fkiraly`
+
+Probabilistic regression
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* [ENH] probabilistic regressors - input checks and support for more input types
+  (:pr:`129`) :user:`fkiraly`
+* [ENH] multiple quantile regression (:pr:`108`) :user:`Ram0nB`
+* [ENH] interface ``MapieRegressor`` from ``mapie`` (:pr:`136`) :user:`fkiraly`
+
+Test framework
+~~~~~~~~~~~~~~
+
+* [ENH] integrate ``check_estimator`` with ``TestAllEstimators`` and
+  ``TestAllRegressors`` for python command line estimator testing
+  (:pr:`138`) :user:`fkiraly`
+* [ENH] improved conditional testing (:pr:`140`) :user:`fkiraly`
+
+Documentation
+-------------
+
+* [DOC] fix math in ``plotting`` docstrings (:pr:`121`) :user:`fkiraly`
+* [DOC] improved probabilistic tabular regressor extension template
+  (:pr:`137`) :user:`fkiraly`
+* [DOC] typo fixes in regression extension template (:pr:`139`) :user:`fkiraly`
+
+Maintenance
+-----------
+
+* [MNT] point readthedocs ``json`` switcher variable to GitHub
+  (:pr:`125`) :user:`fkiraly`
+* [MNT] change test OS versions to latest (:pr:`126`) :user:`fkiraly`
+
+Fixes
+-----
+
+* [BUG] fix test fixture generation logic (:pr:`142`) :user:`fkiraly`
+* [BUG] fix retrieval in ``all_objects`` if ``filter_tags`` is provided
+  (:pr:`141`) :user:`fkiraly`
+
+Contributors
+------------
+:user:`fkiraly`,
+:user:`Ram0nB`
+
+
 [2.1.0] - 2023-10-09
 ====================
 
